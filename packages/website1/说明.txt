@@ -1,0 +1,18 @@
+pnpm approve-builds
+
+已经加入了仓库，推送到了github
+git init 
+git add . 
+git commit -m "first commit"
+git branch -M master  
+git remote add origin git@github.com:eeboss/volty.git
+git push -u origin master
+
+
+提交本地分支到远程分支
+git push -u origin master
+
+将现有项目添加并提交上传
+git add -A
+git commit -m '初始化git项目'
+git push --set-upstream origin master

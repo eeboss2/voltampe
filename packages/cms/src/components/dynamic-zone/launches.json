@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_dynamic_zone_launches",
+  "info": {
+    "displayName": "Launches",
+    "icon": "rocket"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "sub_heading": {
+      "type": "string"
+    },
+    "launches": {
+      "type": "component",
+      "component": "shared.launches",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,37 @@
+# **第一阶段：构建阶段**
+FROM node:20-alpine AS build
+RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git > /dev/null 2>&1
+ENV NODE_ENV=production
+
+WORKDIR /opt/
+COPY package.json ./
+# RUN npm install --platform=linuxmusl --arch=x64 sharp
+# RUN npm install
+# RUN npm install strapi@latest -g
+# RUN npm install -g node-gyp
+# RUN npm config set network-timeout 600000 -g && 
+RUN npm install --omit=dev
+WORKDIR /opt/app
+COPY ./ .
+RUN npm run build
+
+# **第二阶段：生产环境（最终镜像）**
+FROM node:20-alpine AS final
+RUN apk add --no-cache vips-dev
+ENV NODE_ENV=production
+
+WORKDIR /opt/
+# ✅ **从 "build" 阶段复制依赖**
+COPY --from=build /opt/node_modules ./node_modules
+
+WORKDIR /opt/app
+# ✅ **从 "build" 阶段复制构建后的应用**
+COPY --from=build /opt/app ./
+
+ENV PATH=/opt/node_modules/.bin:$PATH
+
+
+RUN chown -R node:node /opt/app
+USER node
+EXPOSE 1337
+CMD ["npm", "run", "start"]

@@ -1,0 +1,52 @@
+{
+  "name": "cms-1",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "seed:example": "node ./scripts/seed.js",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+  },
+  "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^6.0.3",
+    "@smithy/signature-v4": "^5.3.5",
+    "@strapi/plugin-cloud": "5.30.1",
+    "@strapi/plugin-seo": "^2.0.8",
+    "@strapi/plugin-users-permissions": "5.30.1",
+    "@strapi/provider-upload-aws-s3": "^5.30.1",
+    "@strapi/strapi": "5.30.1",
+    "codemirror": "^6.0.2",
+    "fs-extra": "^10.0.0",
+    "mime-types": "^2.1.27",
+    "mysql2": "3.9.8",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "strapi-provider-cloudflare-r2": "^0.3.0",
+    "strapi-provider-upload-oss": "^0.2.1",
+    "styled-components": "^6.0.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "007be76a-cce6-4248-acc9-14875f3d14af",
+    "installId": "f8d9515ce443b42434e7dd24cd5f301b68012e8a56405488a2dd3ef6d9836e77"
+  }
+}

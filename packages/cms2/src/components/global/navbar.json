@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_global_navbars",
+  "info": {
+    "displayName": "Hero",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "topspan": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "sub_heading": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

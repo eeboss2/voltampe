@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_cards_graph_cards",
+  "info": {
+    "displayName": "Graph_Card",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "top_items": {
+      "type": "component",
+      "component": "items.graph-card-top-items",
+      "repeatable": true
+    },
+    "highlighted_text": {
+      "type": "string"
+    },
+    "span": {
+      "type": "enumeration",
+      "enum": [
+        "one",
+        "two",
+        "three"
+      ]
+    }
+  },
+  "config": {}
+}
